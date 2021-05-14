@@ -16,7 +16,7 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: "Special for you",
+            title: "Đề xuất",
             press: () {},
           ),
         ),
@@ -27,14 +27,14 @@ class SpecialOffers extends StatelessWidget {
             children: [
               SpecialOfferCard(
                 image: "assets/images/Image Banner 2.png",
-                category: "Smartphone",
-                numOfBrands: 18,
+                category: "Điện thoại",
+                numOfBrands: 24,
                 press: () {},
               ),
               SpecialOfferCard(
                 image: "assets/images/Image Banner 3.png",
-                category: "Fashion",
-                numOfBrands: 24,
+                category: "Thời trang",
+                numOfBrands: 124,
                 press: () {},
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
@@ -104,7 +104,7 @@ class SpecialOfferCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
+                        TextSpan(text: "$numOfBrands sản phẩm")
                       ],
                     ),
                   ),

@@ -13,7 +13,7 @@ class PopularProducts extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Popular Products", press: () {}),
+          child: SectionTitle(title: "Phổ biến", press: () {}),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
@@ -27,7 +27,7 @@ class PopularProducts extends StatelessWidget {
                     return ProductCard(product: demoProducts[index]);
 
                   return SizedBox
-                      .shrink(); // here by default width and height is 0
+                      .shrink(); 
                 },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),

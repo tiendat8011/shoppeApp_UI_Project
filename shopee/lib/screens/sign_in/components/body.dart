@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/components/no_account_text.dart';
 import 'package:shop_app/components/socal_card.dart';
 import '../../../size_config.dart';
+import 'package:shop_app/constants.dart';
 import 'sign_form.dart';
 
 class Body extends StatelessWidget {
@@ -17,20 +18,31 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
-                Text(
-                  "Welcome Back",
+                // Text(
+                //   "Welcome Back",
+                //   style: TextStyle(
+                //     color: Colors.black,
+                //     fontSize: getProportionateScreenWidth(28),
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                 Text(
+                  "SUUPAA",
                   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: getProportionateScreenWidth(28),
+                    fontSize: getProportionateScreenWidth(36),
+                    color: kPrimaryColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
-                  "Sign in with your email and password  \nor continue with social media",
-                  textAlign: TextAlign.center,
-                ),
+                // Text(
+                //   "Sign in with your email and password  \nor continue with social media",
+                //   textAlign: TextAlign.center,
+                // ),
+                
+                // form login
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 SignForm(),
+
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -50,6 +62,7 @@ class Body extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
+                // in component/ no_account_text.dart
                 NoAccountText(),
               ],
             ),

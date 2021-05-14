@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class Product {
   final int id;
-  final String title, description;
+  final String title, description, price;
   final List<String> images;
   final List<Color> colors;
-  final double rating, price;
+  final double rating;
   final bool isFavourite, isPopular;
 
   Product({
@@ -38,8 +38,8 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Wireless Controller for PS4™",
-    price: 64.99,
+    title: "Tay cầm không dây PS4",
+    price: '95.000',
     description: description,
     rating: 4.8,
     isFavourite: true,
@@ -56,8 +56,8 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Nike Sport White - Man Pant",
-    price: 50.5,
+    title: "Quần thể thao nam Nike",
+    price: '85.000',
     description: description,
     rating: 4.1,
     isPopular: true,
@@ -65,7 +65,7 @@ List<Product> demoProducts = [
   Product(
     id: 3,
     images: [
-      "assets/images/glap.png",
+      "assets/images/necklace.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -73,9 +73,9 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Gloves XC Omega - Polygon",
-    price: 36.55,
-    description: description,
+    title: "Vòng cổ nữ đính đá Shaphire",
+    price: '40.500',
+    description: 'Vòng cổ đính đá Shaphire dành cho nữ giới, được sản xuất bằng công nghệ tin xảo nhất tại Italia.',
     rating: 4.1,
     isFavourite: true,
     isPopular: true,
@@ -91,8 +91,8 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Logitech Head",
-    price: 20.20,
+    title: "Tai nghe Logitech",
+    price: '99.600',
     description: description,
     rating: 4.1,
     isFavourite: true,

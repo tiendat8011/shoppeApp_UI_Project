@@ -3,7 +3,6 @@ import 'package:shop_app/constants.dart';
 import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 import 'package:shop_app/size_config.dart';
 
-// This is the best practice
 import '../components/splash_content.dart';
 import '../../../components/default_button.dart';
 
@@ -16,12 +15,12 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to Tokoto, Let’s shop!",
+      "text": "Welcome to SuuPaa, Let’s shop!",
       "image": "assets/images/splash_1.png"
     },
     {
       "text":
-          "We help people conect with store \naround United State of America",
+          "We help people connect with store\nall around the VietNam",
       "image": "assets/images/splash_2.png"
     },
     {
@@ -45,6 +44,7 @@ class _BodyState extends State<Body> {
                   });
                 },
                 itemCount: splashData.length,
+                // truyen image va text cho SplashContent de build 
                 itemBuilder: (context, index) => SplashContent(
                   image: splashData[index]["image"],
                   text: splashData[index]['text'],
@@ -59,6 +59,7 @@ class _BodyState extends State<Body> {
                 child: Column(
                   children: <Widget>[
                     Spacer(),
+                    // build dot under image
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
@@ -68,7 +69,7 @@ class _BodyState extends State<Body> {
                     ),
                     Spacer(flex: 3),
                     DefaultButton(
-                      text: "Continue",
+                      text: "Tiếp Tục",
                       press: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       },

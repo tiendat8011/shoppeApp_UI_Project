@@ -17,7 +17,7 @@ class SplashContent extends StatelessWidget {
       children: <Widget>[
         Spacer(),
         Text(
-          "TOKOTO",
+          "SUUPAA",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(36),
             color: kPrimaryColor,
@@ -25,6 +25,7 @@ class SplashContent extends StatelessWidget {
           ),
         ),
         Text(
+          // nhan text tu body.dart
           text,
           textAlign: TextAlign.center,
         ),
