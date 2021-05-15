@@ -86,7 +86,7 @@ List<Product> demoProducts = [
   Product(
     id: 4,
     images: [
-      "assets/images/necklace.png",
+      "assets/images/wireless headset.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -99,12 +99,11 @@ List<Product> demoProducts = [
     description: description,
     rating: 4.1,
     isFavourite: true,
-    isCloth: true,
   ),
   Product(
     id: 5,
     images: [
-      "assets/images/Rengoku.png",
+      "assets/images/cloth1.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -116,12 +115,13 @@ List<Product> demoProducts = [
     price: '99.600',
     description: description,
     rating: 4.1,
+    isCloth: true,
    // isCloth: true,
   ),
   Product(
     id: 6,
     images: [
-      "assets/images/cloth3.png",
+      "assets/images/cloth2.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -133,12 +133,13 @@ List<Product> demoProducts = [
     price: '99.600',
     description: description,
     rating: 4.1,
+    isCloth: true,
     //isCloth: true,
   ),
   Product(
     id: 7,
     images: [
-      "assets/images/cloth2.png",
+      "assets/images/cloth3.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -150,6 +151,25 @@ List<Product> demoProducts = [
     price: '99.600',
     description: description,
     rating: 4.1,
+    isCloth: true,
+   // isCloth: true,
+  ),
+  Product(
+    id: 8,
+    images: [
+      "assets/images/cloth4.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Áo phông đẹp nam số 4",
+    price: '99.600',
+    description: description,
+    rating: 4.1,
+    isCloth: true,
    // isCloth: true,
   ),
 
