@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/models/Cart.dart';
 import 'package:shop_app/size_config.dart';
 
 import 'color_dots.dart';
@@ -42,7 +43,9 @@ class Body extends StatelessWidget {
                         ),
                         child: DefaultButton(
                           text: "Thêm vào giỏ",
-                          press: () {},
+                          press: () {
+                            AddProductToCart(product);
+                          },
                         ),
                       ),
                     ),
@@ -54,5 +57,18 @@ class Body extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+void AddProductToCart(Product product) {
+  bool KT = true;
+  for (var i = 0; i < demoCarts.length; i++) {
+    if (demoCarts[i].product == product) {
+      demoCarts[i].numOfItem += 1;
+      KT = false;
+    }
+  }
+  if (KT) {
+    demoCarts.add(Cart(product: product, numOfItem: 1));
   }
 }

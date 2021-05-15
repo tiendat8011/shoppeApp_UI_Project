@@ -57,7 +57,7 @@ List<Product> demoProducts = [
       Colors.white,
     ],
     title: "Quần thể thao nam Nike",
-    price: '85.000',
+    price: '65.000',
     description: description,
     rating: 4.1,
     isPopular: true,

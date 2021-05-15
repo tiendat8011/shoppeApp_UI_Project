@@ -1,15 +1,20 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/components/default_button.dart';
-
+import 'package:shop_app/models/Cart.dart';
+import 'package:shop_app/screens/login_success/login_success_screen.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
     Key key,
+    @required this.demoCarts,
   }) : super(key: key);
 
+  final List<Cart> demoCarts;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +73,7 @@ class CheckoutCard extends StatelessWidget {
                     text: "Tổng:\n",
                     children: [
                       TextSpan(
-                        text: "\đ420.000",
+                        text: "\đ" + getMoney(demoCarts),
                         style: TextStyle(fontSize: 16, color: Colors.black),
                       ),
                     ],
@@ -78,7 +83,9 @@ class CheckoutCard extends StatelessWidget {
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
                     text: "Thanh toán",
-                    press: () {},
+                    press: () {
+                      Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                    },
                   ),
                 ),
               ],
@@ -88,4 +95,14 @@ class CheckoutCard extends StatelessWidget {
       ),
     );
   }
+}
+
+String getMoney(List<Cart> demoCarts) {
+  double money = 0;
+  demoCarts.forEach((cart) {
+    int hs = cart.numOfItem;
+    double myPrice = double.parse(cart.product.price);
+    money += myPrice*hs;
+  });
+  return money.toStringAsFixed(3);
 }
