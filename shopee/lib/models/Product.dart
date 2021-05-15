@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:flutter/material.dart';
 
 class Product {
@@ -6,7 +8,7 @@ class Product {
   final List<String> images;
   final List<Color> colors;
   final double rating;
-  final bool isFavourite, isPopular;
+  final bool isFavourite, isCloth, isPopular;
 
   Product({
     @required this.id,
@@ -15,6 +17,7 @@ class Product {
     this.rating = 0.0,
     this.isFavourite = false,
     this.isPopular = false,
+    this.isCloth = false,
     @required this.title,
     @required this.price,
     @required this.description,
@@ -42,7 +45,7 @@ List<Product> demoProducts = [
     price: '95.000',
     description: description,
     rating: 4.8,
-    isFavourite: true,
+    isFavourite: false,
     isPopular: true,
   ),
   Product(
@@ -77,13 +80,13 @@ List<Product> demoProducts = [
     price: '40.500',
     description: 'Vòng cổ đính đá Shaphire dành cho nữ giới, được sản xuất bằng công nghệ tin xảo nhất tại Italia.',
     rating: 4.1,
-    isFavourite: true,
+    isFavourite: false,
     isPopular: true,
   ),
   Product(
     id: 4,
     images: [
-      "assets/images/wireless headset.png",
+      "assets/images/necklace.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -96,7 +99,60 @@ List<Product> demoProducts = [
     description: description,
     rating: 4.1,
     isFavourite: true,
+    isCloth: true,
   ),
+  Product(
+    id: 5,
+    images: [
+      "assets/images/Rengoku.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Áo phông đẹp nam số 1",
+    price: '99.600',
+    description: description,
+    rating: 4.1,
+   // isCloth: true,
+  ),
+  Product(
+    id: 6,
+    images: [
+      "assets/images/cloth3.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Áo phông đẹp nam số 2",
+    price: '99.600',
+    description: description,
+    rating: 4.1,
+    //isCloth: true,
+  ),
+  Product(
+    id: 7,
+    images: [
+      "assets/images/cloth2.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Áo phông đẹp nam số 3",
+    price: '99.600',
+    description: description,
+    rating: 4.1,
+   // isCloth: true,
+  ),
+
 ];
 
 const String description =
