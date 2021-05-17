@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/size_config.dart';
 
+import '../../../models/user.model.dart';
 import 'complete_profile_form.dart';
 
 class Body extends StatelessWidget {
+  final UserModel userModel;
+
+  const Body({Key key, this.userModel}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,7 +27,7 @@ class Body extends StatelessWidget {
                 //   textAlign: TextAlign.center,
                 // ),
                 SizedBox(height: SizeConfig.screenHeight * 0.06),
-                CompleteProfileForm(),
+                CompleteProfileForm(userModel: userModel),
                 SizedBox(height: getProportionateScreenHeight(30)),
                 // Text(
                 //   "By continuing your confirm that you agree \nwith our Term and Condition",

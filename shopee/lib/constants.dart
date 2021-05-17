@@ -35,6 +35,8 @@ const String kLastNameNullError = "Vui lòng nhập Họ";
 const String kPhoneNumberNullError = "Vui lòng nhập Số điện thoại";
 const String kAddressNullError = "Vui lòng nhập địa chỉ";
 
+const String USER_COLLECTION = 'user';
+
 final otpInputDecoration = InputDecoration(
   contentPadding:
       EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),

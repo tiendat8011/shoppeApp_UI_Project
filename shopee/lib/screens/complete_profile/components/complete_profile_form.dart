@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:shop_app/components/custom_surfix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_error.dart';
-import 'package:shop_app/screens/otp/otp_screen.dart';
+import 'package:shop_app/screens/home/home_screen.dart';
 
 import '../../../constants.dart';
+import '../../../models/user.model.dart';
+import '../../../service/auth.service.dart';
 import '../../../size_config.dart';
 
 class CompleteProfileForm extends StatefulWidget {
+  final UserModel userModel;
+
+  const CompleteProfileForm({Key key, this.userModel}) : super(key: key);
+
   @override
   _CompleteProfileFormState createState() => _CompleteProfileFormState();
 }
 
 class _CompleteProfileFormState extends State<CompleteProfileForm> {
-  final _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
   final List<String> errors = [];
   String firstName;
   String lastName;
   String phoneNumber;
   String address;
+  bool isSigned = false;
+  final AuthService _authService = AuthService();
 
   void addError({String error}) {
     if (!errors.contains(error))
@@ -36,7 +45,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
+    return FormBuilder(
       key: _formKey,
       child: Column(
         children: [
@@ -49,14 +58,33 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           buildAddressFormField(),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
-          DefaultButton(
+          (!isSigned) ? DefaultButton(
             text: "Tiếp tục",
-            press: () {
-              if (_formKey.currentState.validate()) {
-                Navigator.pushNamed(context, OtpScreen.routeName);
+            press: () async {
+              setState(() {
+                isSigned = true;
+              });
+              if (_formKey.currentState.saveAndValidate()) {
+                await _authService.addUser(
+                  userModel: UserModel(
+                    uid: widget.userModel.uid,
+                    address: address,
+                    phone: phoneNumber,
+                    name: firstName,
+                    surname: lastName,
+                  ),
+                );
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                setState(() {
+                  isSigned = false;
+                });
+              } else {
+                setState(() {
+                  isSigned = false;
+                });
               }
             },
-          ),
+          ) : CircularProgressIndicator(),
         ],
       ),
     );
@@ -84,8 +112,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon:
-            CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
       ),
     );
   }

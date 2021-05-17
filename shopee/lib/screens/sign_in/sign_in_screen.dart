@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/models/user.model.dart';
+import 'package:shop_app/service/auth.service.dart';
 
 import 'components/body.dart';
 
