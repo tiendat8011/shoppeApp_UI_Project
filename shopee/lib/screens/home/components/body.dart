@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/home/components/shoes.dart';
+import 'package:shop_app/screens/home/components/skin_care.dart';
 
 import '../../../size_config.dart';
 import 'categories.dart';
@@ -24,7 +26,11 @@ class Body extends StatelessWidget {
             //SizedBox(height: getProportionateScreenWidth(30)),
             PopularProducts(),
             SizedBox(height: getProportionateScreenWidth(30)),
+            SkincareProducts(),
+            SizedBox(height: getProportionateScreenWidth(30)),
             ClothProducts(),
+            SizedBox(height: getProportionateScreenWidth(30)),
+            ShoesProducts(),
           ],
         ),
       ),

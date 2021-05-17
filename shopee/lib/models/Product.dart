@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class Product {
   final int id;
-  final String title, description, price;
+  final String title, description, price, type;
   final List<String> images;
   final List<Color> colors;
   final double rating;
@@ -18,6 +18,7 @@ class Product {
     this.isFavourite = false,
     this.isPopular = false,
     this.isCloth = false,
+    this.type = '',
     @required this.title,
     @required this.price,
     @required this.description,
@@ -30,10 +31,7 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
-      "assets/images/ps4_console_white_1.png",
-      "assets/images/ps4_console_white_2.png",
-      "assets/images/ps4_console_white_3.png",
-      "assets/images/ps4_console_white_4.png",
+      "assets/images/giay1.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -41,30 +39,32 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Tay cầm không dây PS4",
-    price: '95.000',
-    description: description,
-    rating: 4.8,
-    isFavourite: false,
-    isPopular: true,
-  ),
-  Product(
-    id: 2,
-    images: [
-      "assets/images/Image Popular Product 2.png",
-    ],
-    colors: [
-      Color(0xFFF6625E),
-      Color(0xFF836DB8),
-      Color(0xFFDECB9C),
-      Colors.white,
-    ],
-    title: "Quần thể thao nam Nike",
-    price: '65.000',
+    title: "Giày nam dáng đẹp replica",
+    price: '299.000',
     description: description,
     rating: 4.1,
     isPopular: true,
+    isFavourite: true,
+    type: 'Shoe',
   ),
+  Product(
+      id: 2,
+      images: [
+        "assets/images/skincare1.png",
+      ],
+      colors: [
+        Color(0xFFF6625E),
+        Color(0xFF836DB8),
+        Color(0xFFDECB9C),
+        Colors.white,
+      ],
+      title: "Bảng Phấn Mắt Perfect Diary",
+      price: '299.000',
+      description: description,
+      rating: 4.1,
+      isFavourite: true,
+      isPopular: true,
+    ),
   Product(
     id: 3,
     images: [
@@ -78,7 +78,8 @@ List<Product> demoProducts = [
     ],
     title: "Vòng cổ nữ đính đá Shaphire",
     price: '40.500',
-    description: 'Vòng cổ đính đá Shaphire dành cho nữ giới, được sản xuất bằng công nghệ tin xảo nhất tại Italia.',
+    description:
+        'Vòng cổ đính đá Shaphire dành cho nữ giới, được sản xuất bằng công nghệ tin xảo nhất tại Italia.',
     rating: 4.1,
     isFavourite: false,
     isPopular: true,
@@ -115,8 +116,7 @@ List<Product> demoProducts = [
     price: '99.600',
     description: description,
     rating: 4.1,
-    isCloth: true,
-   // isCloth: true,
+    type: 'Cloth',
   ),
   Product(
     id: 6,
@@ -133,8 +133,8 @@ List<Product> demoProducts = [
     price: '99.600',
     description: description,
     rating: 4.1,
-    isCloth: true,
-    //isCloth: true,
+    isFavourite: true,
+    type: 'Cloth',
   ),
   Product(
     id: 7,
@@ -151,8 +151,8 @@ List<Product> demoProducts = [
     price: '99.600',
     description: description,
     rating: 4.1,
-    isCloth: true,
-   // isCloth: true,
+    type: 'Cloth',
+    // isCloth: true,
   ),
   Product(
     id: 8,
@@ -169,11 +169,167 @@ List<Product> demoProducts = [
     price: '99.600',
     description: description,
     rating: 4.1,
-    isCloth: true,
-   // isCloth: true,
+    type: 'Cloth',
   ),
-
+  Product(
+    id: 9,
+    images: [
+      "assets/images/skincare1.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Bảng Phấn Mắt Perfect Diary",
+    price: '299.000',
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    type: 'Skincare',
+  ),
+  Product(
+    id: 10,
+    images: [
+      "assets/images/skincare2.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Son LipStick Wham A20 đỏ ",
+    price: '150.000',
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    type: 'Skincare',
+  ),
+  Product(
+    id: 11,
+    images: [
+      "assets/images/skincare3.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Kem chống nắng L'oreal UV Perfect",
+    price: '60.000',
+    description: description,
+    rating: 4.1,
+    type: 'Skincare',
+  ),
+  Product(
+    id: 12,
+    images: [
+      "assets/images/skincare4.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Son mịn lì cao cấp L'Oreal Paris",
+    price: '120.500',
+    description: description,
+    rating: 4.1,
+    type: 'Skincare',
+  ),
+    Product(
+    id: 13,
+    images: [
+      "assets/images/giay1.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Giày nam dáng đẹp replica",
+    price: '299.000',
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    type: 'Shoe',
+  ),
+  Product(
+    id: 14,
+    images: [
+      "assets/images/giay2.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Giày nam dáng đẹp replica",
+    price: '150.000',
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    type: 'Shoe',
+  ),
+  Product(
+    id: 15,
+    images: [
+      "assets/images/giay3.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Giày nam dáng đẹp replica",
+    price: '60.000',
+    description: description,
+    rating: 4.1,
+    type: 'Shoe',
+  ),
+  Product(
+    id: 16,
+    images: [
+      "assets/images/giay4.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Giày nam dáng đẹp replica",
+    price: '120.500',
+    description: description,
+    rating: 4.1,
+    type: 'Shoe',
+  ),
+  Product(
+    id: 6,
+    images: [
+      "assets/images/Image Popular Product 2.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Quần thể thao nam Nike",
+    price: '99.900',
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    type: 'Cloth',
+  ),
 ];
 
 const String description =
-    "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";
+    "Sản phẩm được nhập khẩu từ nước ngoài, được sản xuất với chất lượng tốt nhất hiện nay. Rất đáng đồng tiền bát gạo.";

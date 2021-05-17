@@ -13,7 +13,7 @@ class ClothProducts extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Quần áo", press: () {}),
+          child: SectionTitle(title: "Quần Áo", press: () {}),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
@@ -23,7 +23,7 @@ class ClothProducts extends StatelessWidget {
               ...List.generate(
                 demoProducts.length,
                 (index) {
-                  if (demoProducts[index].isCloth )
+                  if (demoProducts[index].type == 'Cloth' )
                     return ProductCard(product: demoProducts[index]);
 
                   return SizedBox
