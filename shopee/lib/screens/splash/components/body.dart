@@ -17,17 +17,13 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to SuuPaa, Let’s shop!",
+      "text": "Suupaa app của mọi nhà!",
       "image": "assets/images/splash_3.png"
     },
     {
       "text":
-          "We help people connect with store\nall around the VietNam",
-      "image": "assets/images/splash_2.png"
-    },
-    {
-      "text": "We show the easy way to shop. \nJust stay at home with us",
-      "image": "assets/images/splash_1.png"
+          "Sản phẩm môn UI của nhóm 7",
+      "image": "assets/images/splash_3.png"
     },
   ];
   @override

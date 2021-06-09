@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/screens/profile/components/profile_menu.dart';
 import 'package:shop_app/screens/profile/components/profile_pic.dart';
 import 'package:shop_app/service/auth.service.dart';
+import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -48,7 +49,8 @@ class _BodyState extends State<Body> {
                     });
                     if (await AuthService().signOut()) {
                       Future.delayed(Duration(milliseconds: 150), () {
-                        Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
+                        // Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
+                         Navigator.pushNamed(context, SignInScreen.routeName);
                         setState(() {
                           isSigned = false;
                         });

@@ -45,7 +45,6 @@ List<Product> demoProducts = [
     rating: 4.1,
     isPopular: true,
     isFavourite: true,
-    type: 'Shoe',
   ),
   Product(
       id: 2,
@@ -204,7 +203,7 @@ List<Product> demoProducts = [
     price: '150.000',
     description: description,
     rating: 4.1,
-    isFavourite: true,
+    isFavourite: false,
     type: 'Skincare',
   ),
   Product(
@@ -312,7 +311,7 @@ List<Product> demoProducts = [
     type: 'Shoe',
   ),
   Product(
-    id: 6,
+    id: 17,
     images: [
       "assets/images/Image Popular Product 2.png",
     ],
